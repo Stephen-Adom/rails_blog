@@ -105,7 +105,7 @@ You can deploy this project using: **Not available**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 👥 Authors <a name="authors"></a>
+## 👥 Author <a name="authors"></a>
 
 👤 **Stephen Addae**
 
