@@ -12,6 +12,7 @@
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
+    - [Run tests](#run-tests)
     - [Deployment](#deployment)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
@@ -98,6 +99,14 @@ Clone this repository to your desired folder:
 **To run the project follow the following instruction:-**
 
 - Run **rails server**
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  rspec spec/*
+```
 
 ### Deployment
 
