@@ -4,7 +4,7 @@
     >
         <h1 class="text-3xl font-bold">User Details</h1>
 
-        <%= render 'users/back'%>
+        <%= link_to 'Back', users_path, class:"btn border border-gray-300 bg-white px-4 py-2 rounded-md text-sm", type: 'button' %>
     </div>
     
     <%= render 'users/user-card', user:@user %>

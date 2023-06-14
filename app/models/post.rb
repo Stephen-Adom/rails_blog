@@ -8,7 +8,10 @@ class Post < ApplicationRecord
   validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   scope :update_posts_counter, -> { User.find(3).update(posts_counter: User.find(3).posts.count) }
-  scope :recent_comments, -> { Comment.where(post_id: 2).order(created_at: :desc).first(5) }
+
+  def recent_comments
+    comments.order(created_at: :desc).first(5)
+  end
 
   def comments_length
     comments.length
