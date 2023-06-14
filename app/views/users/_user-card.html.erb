@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-body">
+        <div class="image-placeholder bg-[url(<%= user.photo %>)]"></div>
+
+        <div class="user-details">
+            <h1 class="text-3xl font-bold text-center sm:text-center md:text-center lg:text-left">
+                <%= user.name %>
+            </h1>
+            <div class="flex items-center justify-between">
+                <div>
+                    <%= link_to 'view details', user_show_path(user), class:"btn", type: 'button' %>
+                    <button type="button" class="btn">view posts</button>
+                </div>
+                <p class="text-center sm:text-center md:text-center lg:text-right">
+                    Number of posts: <span class="text-green-600 font-bold"><%= user.posts_counter %> </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
