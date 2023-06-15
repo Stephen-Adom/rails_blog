@@ -4,5 +4,11 @@ class Comment < ApplicationRecord
 
   validates :text, presence: true
 
-  scope :update_comment_counter, -> { Post.find(3).update(comments_counter: Comment.where(post_id: 3).size) }
+  after_create :update_comments_counter
+
+  private
+
+  def update_comments_counter
+    post.increment!(:comments_counter)
+  end
 end
