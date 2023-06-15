@@ -8,7 +8,7 @@ class Post < ApplicationRecord
   validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  scope :update_posts_counter, -> { User.find(3).update(posts_counter: User.find(3).posts.count) }
+  after_create :update_posts_counter
 
   def recent_comments
     comments.order(created_at: :desc).first(5)
@@ -20,5 +20,11 @@ class Post < ApplicationRecord
 
   def likes_length
     likes.length
+  end
+
+  private
+
+  def update_posts_counter
+    author.increment!(:posts_counter)
   end
 end
