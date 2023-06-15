@@ -8,6 +8,6 @@ class LikesController < ApplicationController
       @user.add_user_like(params[:post_id])
     end
 
-    redirect_to user_posts_path(@user)
+    redirect_to request.path
   end
 end
