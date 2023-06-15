@@ -1,0 +1,37 @@
+<section id="add-post-form" class="w-[80%] mx-auto">
+    <div class="flex items-center justify-between">
+    <h1 class="text-3xl font-bold">New Post</h1>
+
+    <div>
+        <%= render 'users/back' %>
+    </div>
+</div>
+
+
+ <%= form_with(model: @post, url: user_create_post_path, method: :post, remote: false,  class: 'mt-5 w-[70%] mx-auto') do |form|%>
+
+    <div class="field">
+        <%= form.label :title, 'Post title'%>
+        <%= form.text_field :title, class: render_error_border(form, :title) %>
+        <% if form.object.errors.any? %>
+            <span class="block error">
+                <%= render_error_message_for_input(form, :title) %>
+            </span>
+        <% end %>
+
+    </div>
+    <div class="field">
+        <%= form.label :text, 'Post Content'%>
+        <%= form.text_area :text, class: render_error_border(form, :text) %>
+        <% if form.object.errors.any? %>
+            <span class="block error">
+                <%= render_error_message_for_input(form, :text) %>
+            </span>
+        <% end %>
+    </div>
+    
+    <div class="field">
+        <%= form.submit 'Create Post', class: 'bg-green-500 hover:bg-green-700 text-white font-bold py-5 px-4 rounded' %>
+    </div>
+ <% end %>
+</section>
