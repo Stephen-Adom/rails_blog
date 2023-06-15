@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.user-details {
+  @apply w-[86%] border border-gray-300 rounded-md h-[150px] p-5;
+}
+
+.image-placeholder {
+  @apply w-[50%] sm:w-full md:w-[20%] lg:w-[18%] h-[150px] bg-gray-200 rounded-md;
+}
+
+.card .card-body {
+  @apply p-4 flex flex-col sm:flex-col md:flex-row lg:flex-row items-center gap-y-5 sm:gap-y-8 md:gap-y-0 lg:gap-y-0 gap-x-10;
+}
+
+.btn {
+  @apply text-sm;
+}
+
+.add-user-btn {
+  @apply bg-green-600 text-white px-3 py-2 rounded-md text-sm;
+}

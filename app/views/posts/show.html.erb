@@ -1,1 +1,35 @@
-<h1><%= @placeholder %></h1>
+<section id="user-details" class="container mx-auto py-5">
+    <div
+    class="header-section flex flex-col sm:flex-col md:flex-row items-center justify-between gap-y-5"
+>
+    <h1 class="text-3xl font-bold">User Post Details</h1>
+
+    <%= render 'users/back' %>
+</div>
+
+    <div class="recent-post-container mt-5">
+        <div class="post-card border border-gray-300 rounded-md p-5">
+            <h4 class="font-semibold text-lg mb-5"><%= @post.title %> </h4>
+            <p>
+               <%= @post.text %>
+            </p>
+
+            <p class="text-right text-sm mt-3">Comments: <%= @post.comments_length %> Likes: <%= @post.likes_length %> </p>
+
+            <div class="comment-list mt-5">
+                <div class="divider flex items-center gap-x-2">
+                    <span class="block w-[10%]">All Comments</span>
+                    <span class="block border border-t border-gray-300 w-[80%]"></span>
+                </div>
+
+                <div class="comment-list-container">
+                    <% if @post.comments.length %>
+                        <% @post.comments.each do |comment| %>
+                            <%= render 'posts/comment', comment:comment %>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
