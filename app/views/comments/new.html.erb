@@ -1,0 +1,26 @@
+<section id="add-post-form" class="w-[80%] mx-auto">
+    <div class="flex items-center justify-between">
+    <h1 class="text-3xl font-bold">Add Comment</h1>
+
+    <div>
+        <%= render 'users/back' %>
+    </div>
+</div>
+
+
+ <%= form_with(model: @comment, url: user_post_comments_path, method: :post, class: 'mt-5 w-[70%] mx-auto') do |form|%>
+    <div class="field">
+        <%= form.label :text, 'Comment'%>
+        <%= form.text_area :text, class: render_error_border(form, :text), placeholder: 'Share your thoughts...' %>
+        <% if form.object.errors.any? %>
+            <span class="block error">
+                <%= render_error_message_for_input(form, :text) %>
+            </span>
+        <% end %>
+    </div>
+    
+    <div class="field">
+        <%= form.submit 'Add Comment', class: 'bg-green-500 hover:bg-green-700 text-white font-bold py-5 px-4 rounded' %>
+    </div>
+ <% end %>
+</section>
