@@ -11,7 +11,10 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-10 px-5 flex">
+    <main class="container flex flex-col px-5 mx-auto mt-10">
+      <% flash.each do |type, message|%>
+        <span class="block <%= type %>"> <%= message %> </span>
+      <% end %>
       <%= yield %>
     </main>
   </body>
