@@ -106,6 +106,7 @@ To run tests, run the following command:
 
 ```sh
   rspec spec/*
+  ./bin/rails test:integration
 ```
 
 ### Deployment
