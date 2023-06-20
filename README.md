@@ -98,7 +98,14 @@ Clone this repository to your desired folder:
 
 **To run the project follow the following instruction:-**
 
-- Run **rails server**
+```sh
+  bundle exec rails server
+
+  run gem install mailcatcher --pre -> a super simple SMTP server which catches any email messages
+  run mailcatcher and go to http://127.0.0.1:1080/
+```
+
+-
 
 ### Run tests
 
