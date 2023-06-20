@@ -30,6 +30,10 @@ label {
   @apply block w-full mb-3 text-lg font-semibold;
 }
 
+.new_user {
+  @apply mb-5;
+}
+
 input,
 textarea {
   @apply block w-full;
