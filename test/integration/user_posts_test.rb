@@ -46,5 +46,8 @@ class UserPostsTest < ActionDispatch::IntegrationTest
     assert page.has_css?('div.pagination')
   end
 
- 
+  test 'should redirect to the post details page' do
+    click_link_or_button 'view details', match: :first
+    assert_current_path user_post_path(@user, @post)
+  end
 end
