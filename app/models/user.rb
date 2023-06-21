@@ -27,4 +27,8 @@ class User < ApplicationRecord
   def add_user_like(post_id)
     likes.create(post_id:)
   end
+
+  def is?(requested_role)
+    role == requested_role.to_s
+  end
 end
