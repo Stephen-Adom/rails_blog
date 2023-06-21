@@ -11,10 +11,21 @@
   </head>
 
   <body>
+    <% if current_user %>
+      <nav class="bg-gray-200">
+        <div class="container flex items-center justify-between w-full p-3 mx-auto">
+          <h3>RailsBlog</h3>
+
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+        </div>
+      </nav>
+    <% end %>
+
     <main class="container flex flex-col px-5 mx-auto mt-10">
       <% flash.each do |type, message|%>
         <span class="block <%= type %>"> <%= message %> </span>
       <% end %>
+
       <%= yield %>
     </main>
   </body>
