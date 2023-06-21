@@ -10,6 +10,8 @@ class Post < ApplicationRecord
 
   after_create :update_posts_counter
 
+  after_destroy :reduce_posts_counter
+
   def recent_comments
     comments.order(created_at: :desc).first(5)
   end
@@ -26,5 +28,9 @@ class Post < ApplicationRecord
 
   def update_posts_counter
     author.increment!(:posts_counter)
+  end
+
+  def reduce_posts_counter
+    author.decrement!(:posts_counter)
   end
 end

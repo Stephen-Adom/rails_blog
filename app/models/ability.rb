@@ -4,10 +4,10 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :delete, [Post, Comment], user
-
-    return unless user.is? :admin
-
-    can :delete, [Post, Comment]
+    if user.is? :admin
+      can :destroy, [Post, Comment]
+    else
+      can :destroy, [Post, Comment], author_id: user.id
+    end
   end
 end

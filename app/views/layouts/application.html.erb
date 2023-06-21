@@ -16,7 +16,12 @@
         <div class="container flex items-center justify-between w-full p-3 mx-auto">
           <h3>RailsBlog</h3>
 
-          <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+          <div class="flex items-center gap-3">
+            <% if current_user %>
+              <span class="block font-bold"> <%= current_user.name %> </span>
+            <% end %>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+          </div>
         </div>
       </nav>
     <% end %>
