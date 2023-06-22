@@ -1,5 +1,6 @@
 class Api::PostController < ActionController::API
   def index
-    render json: User.includes(:posts).find(params[:user_id]).posts, status: :ok
+    @posts = User.includes(:posts).find(params[:user_id]).posts
+    render json: @posts, status: :ok
   end
 end
