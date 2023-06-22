@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   root "users#index"
 
   namespace :api do
-    resources :post_api, only: [:index]
+    resources :user, only: [:index, :show] do
+      resources :post, only: [:index] do
+      resources :comment, only: [:index, :create]
+      end
+    end
   end
 
   resources :users, only: [:index, :show] do
