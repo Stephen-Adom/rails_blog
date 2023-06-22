@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "users#index"
 
+  namespace :api do
+    resources :post_api, only: [:index]
+  end
+
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :new, :show, :destroy] do
       resources :comments, only: [:new, :create, :destroy]
@@ -12,11 +16,7 @@ Rails.application.routes.draw do
     end
   end
 
-  scope :api do
-    resources :posts, only: [:index, :new, :show, :destroy] do
-      resources :comments, only: [:new, :create, :destroy]
-    end
-  end
+
 
   post 'users/:user_id/posts', to: 'posts#create', as: :user_create_post
 end
