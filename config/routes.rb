@@ -12,5 +12,11 @@ Rails.application.routes.draw do
     end
   end
 
+  scope :api do
+    resources :posts, only: [:index, :new, :show, :destroy] do
+      resources :comments, only: [:new, :create, :destroy]
+    end
+  end
+
   post 'users/:user_id/posts', to: 'posts#create', as: :user_create_post
 end
