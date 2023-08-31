@@ -63,11 +63,11 @@ A blog application developed using rails
 
 To get a local copy up and running, follow these steps.
 
-- clone this repo:https://github.com/Stephen-Adom/rails_blog.git
+- Clone this repo:https://github.com/Stephen-Adom/rails_blog.git
 
 ### Prerequisites
 
-In order to run this project you need ruby, rails and postgres installed:
+In order to run this project you need Ruby, rails and Postgres installed:
 
 On Linux:
 
