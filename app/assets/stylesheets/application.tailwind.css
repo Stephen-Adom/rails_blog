@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.user-details {
+  @apply w-[86%] border border-gray-300 rounded-md h-[150px] p-5;
+}
+
+.image-placeholder {
+  @apply w-[50%] sm:w-full md:w-[20%] lg:w-[18%] h-[150px] bg-gray-200 rounded-md;
+}
+
+.card .card-body {
+  @apply flex flex-col items-center p-4 sm:flex-col md:flex-row lg:flex-row gap-y-5 sm:gap-y-8 md:gap-y-0 lg:gap-y-0 gap-x-10;
+}
+
+.btn {
+  @apply text-sm;
+}
+
+.add-user-btn {
+  @apply px-3 py-2 text-sm text-white bg-green-600 rounded-md;
+}
+
+.field {
+  @apply mb-7;
+}
+
+label {
+  @apply block w-full mb-3 text-lg font-semibold;
+}
+
+.new_user {
+  @apply mb-5;
+}
+
+input,
+textarea {
+  @apply block w-full;
+}
+
+.invalid {
+  @apply border border-red-600;
+}
+
+.error {
+  @apply text-red-600;
+}
+
+.notice {
+  @apply p-4 text-white bg-green-500 border border-green-600 rounded-md;
+}

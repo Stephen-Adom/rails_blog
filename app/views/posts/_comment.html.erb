@@ -1,0 +1,2 @@
+<p class="py-3"><span class="italic font-semibold"><%= comment.author.name %>:</span> <%= comment.text %><% if can?(:destroy, @post, current_user)%>                      <%= button_to 'Delete Comment', user_post_comment_path(@post.author, @post, comment), method: :delete, data: {confirm: 'Are you sure?'}, class: "block border border-red-500 p-4 py-2 rounded-md text-red-500 hover:bg-red-500 hover:text-white" %>
+<% end %></p>

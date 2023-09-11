@@ -1,0 +1,28 @@
+<section id="users-list" class="container py-5 mx-auto">
+    <div
+        class="flex flex-col items-center justify-between header-section sm:flex-col md:flex-row gap-y-5">
+        <h1 class="text-3xl font-bold">List of Users</h1>
+        <div class="flex items-center gap-x-4">
+            <div class="form-group">
+                <input
+                    type="text"
+                    placeholder="Search user..."
+                    class="px-4 py-2 text-sm bg-gray-200 border border-gray-200 rounded-md"
+                    aria-label="search"
+                />
+            </div>
+            <button type="button" class="btn add-user-btn">Add User</button>
+        </div>
+    </div>
+
+    <div class="users-list-container mt-7 w-full sm:w-full md:w-[80%] lg:w-[80%] mx-auto max-h-[800px] overflow-y-auto px-4">
+        <% if @users.length.positive? %>
+            <% @users.each do |user| %>
+                <%= render "users/user-card", user:user %>
+            <% end %>
+        <% else %>
+            <h1 class="italic font-bold">No Users Available!!</h1>
+        <% end %>
+
+    </div>
+</section>

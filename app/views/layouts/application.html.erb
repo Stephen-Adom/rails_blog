@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsBlog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <% if current_user %>
+      <nav class="bg-gray-200">
+        <div class="container flex items-center justify-between w-full p-3 mx-auto">
+          <h3>RailsBlog</h3>
+
+          <div class="flex items-center gap-3">
+            <% if current_user %>
+              <span class="block font-bold"> <%= current_user.name %> </span>
+            <% end %>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+          </div>
+        </div>
+      </nav>
+    <% end %>
+
+    <main class="container flex flex-col px-5 mx-auto mt-10">
+      <% flash.each do |type, message|%>
+        <span class="block <%= type %>"> <%= message %> </span>
+      <% end %>
+
+      <%= yield %>
+    </main>
+  </body>
+</html>
